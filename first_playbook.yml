@@ -11,5 +11,5 @@
         gather_subset: all
 
     - name: Display the config
-        debug:
-          msg: "The hostname is {{ ansible_net_hostname }}"
+      debug:
+        msg: "The hostname is {{ ansible_net_hostname }}"
