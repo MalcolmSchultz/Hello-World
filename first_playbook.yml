@@ -1,5 +1,5 @@
 ---
-- hosts: eodserver1
+- hosts: 10.0.4.4
   remote_user: root
   tasks:
     - name: test connection
