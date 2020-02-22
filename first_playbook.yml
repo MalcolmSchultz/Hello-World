@@ -3,5 +3,5 @@
   remote_user: mal
   tasks:
     - name: test connection
-      ping:
+      hostname:
       remote_user: mal
