@@ -1,7 +1,10 @@
 ---
-- hosts: eodserver1
-  remote_user: mal
-  tasks:
-    - name: test connection
-      hostname:
-      remote_user: mal
+# This playbook deploys a simple standalone Tomcat 7 server.
+
+- hosts: tomcat-servers
+  remote_user: root
+  become: yes
+  become_method: sudo
+
+  roles:
+    - tomcat
