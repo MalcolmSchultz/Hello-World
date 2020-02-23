@@ -1,17 +1,15 @@
-# Starter pipeline.
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
+---
 
--name: First Playbook
+- name: Network Getting Started First Playbook
+  connection: network_cli
+  gather_facts: false
+  hosts: all
+  tasks:
 
--hosts: eodserver1
+    - name: Get config for VyOS devices
+      vyos_facts:
+        gather_subset: all
 
-steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
-
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+    - name: Display the config
+      debug:
+        msg: "The hostname is {{ ansible_net_hostname }} and the OS is {{ ansible_net_version }}"
