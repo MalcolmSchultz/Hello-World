@@ -1,5 +1,3 @@
----
-
 - name: Create storage account
   azure_rm_storageaccount:
     resource_group: Testing
